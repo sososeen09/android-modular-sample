@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.sososeen09.module.test1">
+
+    <application>
+        <activity android:name="com.sososeen09.module.test1.ModuleTest1Activity"/>
+    </application>
+</manifest>

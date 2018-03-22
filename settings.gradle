@@ -1,0 +1,1 @@
+include ':app', ':modular-annotation', ':modular-compiler', ':modular-api', ':module-test1', ':module-test2', ':module-common-base'

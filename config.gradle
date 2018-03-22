@@ -1,0 +1,23 @@
+ext {
+    //false 表示单独的组件，true表示集成模式
+    isModule = false
+    android = [
+            compileSdkVersion: 26,
+            minSdkVersion    : 15,
+            tagetSdkVersion  : 26,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    appId = [
+            "app"         : "com.sososeen09.modular.sample",
+            "module-test1": "com.sososeen09.module.test1",
+            "module-test2": "com.sososeen09.module.test2"
+    ]
+
+    supportLibrary = "26.1.0"
+
+    dependencies = [
+            "appcompat-v7": "com.android.support:appcompat-v7:${supportLibrary}"
+    ]
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.sososeen09.module.test2">
+
+    <application>
+        <activity android:name=".ModuleTest2Activity">
+        </activity>
+    </application>
+
+</manifest>

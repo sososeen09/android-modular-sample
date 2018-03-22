@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.sososeen09.module.test1">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:name="com.sososeen09.module.common.CommonApp"
+        android:supportsRtl="true">
+        <activity android:name="com.sososeen09.module.test1.ModuleTest1Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
