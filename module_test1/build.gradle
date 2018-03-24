@@ -1,26 +1,48 @@
-apply plugin: 'com.android.application'
+if (isModule) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: "com.android.application"
+}
+
 
 def config = rootProject.ext.android
 def appId = rootProject.ext.appId
 
+
 android {
     compileSdkVersion config.compileSdkVersion
+
     defaultConfig {
-        applicationId appId.app
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
         versionName config.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        //添加一条 boolean类型的变量
-        buildConfigField("boolean", "isModule", String.valueOf(isModule))
+        if (!isModule) {
+            applicationId appId["build"]
+        }
 
-        javaCompileOptions{
+        javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
             }
         }
+
+        sourceSets {
+            main {
+                if (isModule) {
+                    manifest.srcFile 'src/main/AndroidManifest.xml'
+                } else {
+                    manifest.srcFile 'src/module/AndroidManifest.xml'
+                    java.srcDirs 'src/module/java', 'src/main/java'
+                    resources.srcDirs 'src/module/res', 'src/main/res'
+                }
+            }
+
+        }
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -29,21 +51,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
     implementation "com.android.support:appcompat-v7:${supportLibrary}"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
-    if (isModule) {
-        implementation project(':module_test1')
-        implementation project(':module_test2')
-    }
 
     implementation project(':module-common-base')
     annotationProcessor project(':router-compiler')

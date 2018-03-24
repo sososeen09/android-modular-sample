@@ -19,7 +19,7 @@ public class Consts {
 
     public static final String IROUTE_GROUP = "com.sososeen09.modular.api.template.IRouteGroup";
     public static final String IROUTE_ROOT = "com.sososeen09.modular.api.template.IRouteRoot";
-    public static final String IEXTRA = "com.sososeen09.modular.api.template.IRouteGroup";
+    public static final String IEXTRA = "com.sososeen09.modular.api.template.IExtra";
 
 
     public static final String METHOD_LOAD_INTO = "loadInto";
