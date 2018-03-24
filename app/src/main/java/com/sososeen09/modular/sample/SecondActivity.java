@@ -3,12 +3,12 @@ package com.sososeen09.modular.sample;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.sososeen09.modular.annotation.Router;
+import com.sososeen09.modular.annotation.Route;
 
 /**
  * @author yunlong
  */
-@Router(path = "test/second")
+@Route(path = "/test/second")
 public class SecondActivity extends AppCompatActivity {
 
     @Override

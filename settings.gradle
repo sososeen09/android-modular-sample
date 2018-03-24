@@ -1,6 +1,6 @@
-include ':app', ':modular-annotation', ':modular-compiler', ':modular-api', ':module-test1', ':module-test2', ':module-common-base'
-
-// Add this at the end of settings.gradle
-rootProject.children.each { subproject ->
-    subproject.buildFileName = "${subproject.name}.gradle"
-}
+include ':app', ':router-annotation', ':router-compiler', ':router-api', ':module-test1', ':module-test2', ':module-common-base'
+//
+//// Add this at the end of settings.gradle
+//rootProject.children.each { subproject ->
+//    subproject.buildFileName = "${subproject.name}.gradle"
+//}
