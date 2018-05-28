@@ -16,8 +16,10 @@ ext {
     ]
 
     supportLibrary = "26.1.0"
+    constraintLibrary = "1.0.2"
 
     dependencies = [
-            "appcompat-v7": "com.android.support:appcompat-v7:${supportLibrary}"
+            "appcompat-v7": "com.android.support:appcompat-v7:${supportLibrary}",
+            "constraint-layout": "com.android.support.constraint:constraint-layout:${constraintLibrary}"
     ]
 }

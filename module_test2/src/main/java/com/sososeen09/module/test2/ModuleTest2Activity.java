@@ -51,12 +51,17 @@ public class ModuleTest2Activity extends Activity {
             EasyRouter.getInstance().build("/main/test").withString("a",
                     "从Module2").navigation(this);
         } else {
-            Toast.makeText(this, "当前处于组件模式,无法使用此功能", 0).show();
+            Toast.makeText(this, "当前处于组件模式,无法使用此功能", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void module1Jump(View view) {
         EasyRouter.getInstance().build("/module1/test").withString("msg",
                 "从Module2").navigation(this);
+    }
+
+    public void orderJump(View view) {
+        EasyRouter.getInstance().build("/module2/order").withString("order",
+                "这是订单 id 为sh000000").navigation(this);
     }
 }

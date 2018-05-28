@@ -9,18 +9,28 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我是模块1"/>
+        android:text="我是模块1"
+        android:textAllCaps="false"/>
 
     <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="mainJump"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="跳转main模块"/>
+        android:text="跳转main模块"
+        android:textAllCaps="false"/>
 
     <Button
-        android:onClick="module2Jump"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跳转module2模块"/>
+        android:onClick="module2Jump"
+        android:text="跳转module2模块"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="articleJump"
+        android:text="跳转module1模块 Article"
+        android:textAllCaps="false"/>
 
 </LinearLayout>
