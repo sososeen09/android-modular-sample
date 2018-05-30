@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.sososeen09.modular.api.ActivityRouterInjector;
 import com.sososeen09.modular.api.EasyRouter;
 import com.sososeen09.module.common.TestService;
 
@@ -34,19 +33,29 @@ public class MainActivity extends AppCompatActivity {
          */
         TestService testService = (TestService) EasyRouter.getInstance().build("/main/service1")
                 .navigation();
-        testService.test();
+        if (testService != null) {
+            testService.test();
+        }
 
         TestService testService1 = (TestService) EasyRouter.getInstance().build("/main/service2")
                 .navigation();
-        testService1.test();
+        if (testService1 != null) {
+            testService1.test();
+        }
 
         TestService testService2 = (TestService) EasyRouter.getInstance().build("/module1/service")
                 .navigation();
-        testService2.test();
+
+        if (testService2 != null) {
+            testService2.test();
+        }
 
         TestService testService3 = (TestService) EasyRouter.getInstance().build("/module2/service")
                 .navigation();
-        testService3.test();
+
+        if (testService3 != null) {
+            testService3.test();
+        }
     }
 
     public void innerJump(View view) {

@@ -1,6 +1,6 @@
 ext {
     //false 表示单独的组件，true表示集成模式
-    isModule = true
+    isModule = false
     android = [
             compileSdkVersion: 26,
             minSdkVersion    : 15,
